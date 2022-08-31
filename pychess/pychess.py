@@ -1,8 +1,16 @@
 import sys
-from pprint import pprint
 
 FIRST_PLAYER = 1  # 1 = white, 2 = black
 ENABLE_COLORS = True
+
+
+class termcolors:
+    BOLD = "\033[1m"
+    ENDC = "\033[0m"
+    BG_WHITE = "\033[48;5;246m"
+    BG_BLACK = "\033[48;5;241m"
+    FG_WHITE = "\033[38;5;254m"
+    FG_BLACK = "\033[38;5;233m"
 
 
 class IllegalMoveException(Exception):
@@ -74,15 +82,6 @@ class Piece:
 
     def is_player_piece(self, player):
         return self.player == player
-
-
-class termcolors:
-    BOLD = "\033[1m"
-    ENDC = "\033[0m"
-    BG_WHITE = "\033[48;5;246m"
-    BG_BLACK = "\033[48;5;241m"
-    FG_WHITE = "\033[38;5;254m"
-    FG_BLACK = "\033[38;5;233m"
 
 
 class Board:
